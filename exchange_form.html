@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return / Exchange Request Form</title>
+</head>
+<body align = "center" bgcolor="teal">
+
+    <h2>Return / Exchange Request Form</h2>
+    <form action="/submit-return-exchange" method="POST">
+        
+        <!-- Order Number -->
+        <label for="order-number">Order Number:</label><br>
+        <input type="text" id="order-number" name="order-number" required><br><br>
+
+        <!-- Items to Return/Exchange -->
+        <label for="items">Items to Return/Exchange:</label><br>
+        <textarea id="items" name="items" placeholder="List the items you wish to return or exchange (include product name, size, color)" required></textarea><br><br>
+
+        <!-- Reason for Return/Exchange -->
+        <label for="reason">Reason for Return/Exchange:</label><br>
+        <select id="reason" name="reason" required>
+            <option value="wrong-item">Wrong item received</option>
+            <option value="size-issue">Wrong size</option>
+            <option value="defective-item">Defective or damaged item</option>
+            <option value="other">Other (Please explain below)</option>
+        </select><br><br>
+
+        <!-- Additional Comments (if "Other" is selected) -->
+        <label for="additional-comments">Additional Comments:</label><br>
+        <textarea id="additional-comments" name="additional-comments" placeholder="Provide any extra details if needed"></textarea><br><br>
+
+        <!-- Preferred Action -->
+        <label for="preferred-action">Preferred Action:</label><br>
+        <select id="preferred-action" name="preferred-action" required>
+            <option value="refund">Refund</option>
+            <option value="replacement">Replacement</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Request">
+
+    </form>
+
+</body>
+</html>

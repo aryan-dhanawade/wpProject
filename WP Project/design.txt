@@ -1,0 +1,16 @@
+SoleMate
+1.Home -> NEWS **
+2. About **
+3. Sign Up/ Log in
+4. Contact Us
+5. Final Checkout Page
+6. Mens **
+    a. Athletic
+    b. Sneakers
+    c. Formal
+9. Womens **
+    a. Athletic
+    b. Sneakers
+    c. Traditonal Wear 
+12. Cart
+
