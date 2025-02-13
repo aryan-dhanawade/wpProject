@@ -7,48 +7,127 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        nav {
+            background-color: #ffffff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #333;
+            color: white;
+        }
+        section {
+            padding: 2rem 0;
+        }
+        #home {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 4rem 0;
+        }
+        #home h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        #home p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        #home a {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        #home a:hover {
+            background-color: #1a1a1a;
+        }
+        #about {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
-<body style="font-family: 'Roboto', sans-serif; margin: 0; padding: 0; color: #333;">
+<body>
     <header>
-        <div>
-            <center><h1 style="font-size: 2.5em; font-weight: bold; margin: 0;">SoleMate</h1></center>
-            <center><nav>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 15px;">
-                    <li><a href="#home" >Home</a></li>
-                    <li><a href="#about" >About Us</a></li>
-                    <li><a href="signup.html" >Sign Up/Log In</a></li>
-                    <li><a href="#contact" >Contact</a></li>
-                    <li><a href="#cart"  class="cart-icon">Cart (0)</a></li>
-                    <li><a href="contactus.html"  class="cart-icon">Contact Us</a></li>
-                    <li>
-                        <a href="mens.html" >Mens</a>
-                    </li>
-                    <li>
-                        <a href="women.html">Womens</a>
-                        </ul>
-                    </li>
-                </ul>
-            </nav></center>
-        </div>
+        <h1>SoleMate</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="signup.html">Sign Up/Log In</a></li>
+                <li><a href="exchange_form.html">Exchange</a></li>
+                <li><a href="#cart" class="cart-icon">Cart (0)</a></li>
+                <li><a href="contactus.html" class="cart-icon">Contact Us</a></li>
+                <li><a href="mens.html">Mens</a></li>
+                <li><a href="women.html">Womens</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="home">
-        <div>
-            <h2>Your SoleMate Awaits</h2>
-            <p>Discover the perfect pair of shoes for every occasion. Browse our wide selection of stylish, comfortable, and affordable footwear.</p>
-            <a href="#shop" >Shop Now</a>
-        </div>
+        <h2>Your SoleMate Awaits</h2>
+        <p>Discover the perfect pair of shoes for every occasion. Browse our wide selection of stylish, comfortable, and affordable footwear.</p>
+        <a href="#shop">Shop Now</a>
     </section>
+
     <section>
-        <img src="assets/shoes.avif" style="width:100% ; height: 300px; background-size: cover; 
-        background-repeat: no-repeat;">
+        <img src="assets/shoes.avif" alt="Shoes" style="width:100%; height: 300px; object-fit: cover;">
     </section>
 
     <section id="about">
-        <div>
-            <h2>About Us</h2>
-            <p>At SoleMate, we believe that every step matters. That’s why we’re committed to offering high-quality footwear that combines style, comfort, and durability. Explore our curated collections and find your perfect fit today.</p>
-        </div>
+        <h2>About Us</h2>
+        <p>At SoleMate, we believe that every step matters. That's why we're committed to offering high-quality footwear that combines style, comfort, and durability. Explore our curated collections and find your perfect fit today.</p>
     </section>
 </body>
 </html>
+
