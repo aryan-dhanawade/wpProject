@@ -1,87 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Return / Exchange Request Form</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            line-height: 1.6;
-        }
-        h2 {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 0;
-        }
-        form {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #666;
-        }
-        input[type="text"], textarea, select {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            background-color: #333;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: #1a1a1a;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Return / Exchange Request Form</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Return / Exchange Request Form</h2>
-    <form action="/submit-return-exchange" method="POST">
-        <label for="order-number">Order Number:</label>
-        <input type="text" id="order-number" name="order-number" required>
-
-        <label for="items">Items to Return/Exchange:</label>
-        <textarea id="items" name="items" placeholder="List the items you wish to return or exchange (include product name, size, color)" required></textarea>
-
-        <label for="reason">Reason for Return/Exchange:</label>
-        <select id="reason" name="reason" required>
-            <option value="wrong-item">Wrong item received</option>
-            <option value="size-issue">Wrong size</option>
-            <option value="defective-item">Defective or damaged item</option>
-            <option value="other">Other (Please explain below)</option>
-        </select>
-
-        <label for="additional-comments">Additional Comments:</label>
-        <textarea id="additional-comments" name="additional-comments" placeholder="Provide any extra details if needed"></textarea>
-
-        <label for="preferred-action">Preferred Action:</label>
-        <select id="preferred-action" name="preferred-action" required>
-            <option value="refund">Refund</option>
-            <option value="replacement">Replacement</option>
-        </select>
-
-        <input type="submit" value="Submit Request">
-    </form>
+  <header class="header">
+    <h2 class="header-title">Return / Exchange Request Form</h2>
+  </header>
+  <form action="/submit-return-exchange" method="POST" class="form">
+    <label for="order-number">Order Number:</label>
+    <input type="text" id="order-number" name="order-number" required>
+    
+    <label for="items">Items to Return/Exchange:</label>
+    <textarea id="items" name="items" placeholder="List the items you wish to return or exchange (include product name, size, color)" required></textarea>
+    
+    <label for="reason">Reason for Return/Exchange:</label>
+    <select id="reason" name="reason" required>
+      <option value="wrong-item">Wrong item received</option>
+      <option value="size-issue">Wrong size</option>
+      <option value="defective-item">Defective or damaged item</option>
+      <option value="other">Other (Please explain below)</option>
+    </select>
+    
+    <label for="additional-comments">Additional Comments:</label>
+    <textarea id="additional-comments" name="additional-comments" placeholder="Provide any extra details if needed"></textarea>
+    
+    <label for="preferred-action">Preferred Action:</label>
+    <select id="preferred-action" name="preferred-action" required>
+      <option value="refund">Refund</option>
+      <option value="replacement">Replacement</option>
+    </select>
+    
+    <input type="submit" value="Submit Request" class="btn">
+  </form>
 </body>
 </html>
-

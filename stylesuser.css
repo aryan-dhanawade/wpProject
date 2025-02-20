@@ -1,0 +1,164 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* Profile container styles */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Profile picture styles */
+.profile-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    padding: 20px;
+}
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+/* User info styles */
+.user-info {
+    text-align: center;
+    padding: 20px;
+}
+.user-info h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+.user-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+}
+.user-info a {
+    color: #2c5282;
+    text-decoration: none;
+}
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+/* Tabs styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+}
+.tabs button {
+    flex: 1;
+    padding: 15px;
+    background: #f9f9f9;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.tabs button:hover {
+    background-color: #e9e9e9;
+}
+.tabs button.active {
+    background: #333;
+    color: white;
+}
+
+/* Grid layout styles */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    gap: 20px;
+    border-top: 1px solid #ddd;
+}
+.grid-layout h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.grid-layout p, .grid-layout ul {
+    font-size: 14px;
+    color: #555;
+}
+.grid-layout ul {
+    list-style: none;
+    padding: 0;
+}
+.grid-layout ul li {
+    margin-bottom: 5px;
+}
+
+/* Responsive design for grid layout */
+@media (max-width: 600px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Iframe styles */
+iframe {
+    border: none;
+    width: 100%;
+    height: 700px;
+}
+
+/* Footer styles */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
