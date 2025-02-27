@@ -181,3 +181,8 @@ body {
       gap: 1rem;
     }
   }
+
+
+#usernameError, #passwordError, #confirmPasswordError, #emailError, #zipCodeError {
+  color: red;
+}

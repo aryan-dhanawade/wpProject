@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,15 +33,21 @@
             display: flex;
             flex-direction: column;
         }
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
         label {
             margin-bottom: 0.5rem;
             color: #666;
+            display: block;
         }
         input[type="text"], input[type="password"] {
             padding: 0.5rem;
-            margin-bottom: 1rem;
+            width: 100%;
             border: 1px solid #ddd;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         input[type="submit"] {
             background-color: #333;
@@ -52,6 +57,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: 1rem;
         }
         input[type="submit"]:hover {
             background-color: #1a1a1a;
@@ -67,32 +73,138 @@
         .form-footer a:hover {
             text-decoration: underline;
         }
-
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .checkbox-container input {
+            margin-right: 0.5rem;
+        }
+        .error {
+            border-color: #e53e3e !important;
+        }
+        .error-message {
+            color: #e53e3e;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .show-password {
+            position: absolute;
+            right: 10px;
+            top: 30px;
+            cursor: pointer;
+            color: #666;
+            user-select: none;
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h1>Login Form</h1>
-        <form action="/login" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <form id="loginForm" action="http://localhost:5000/redirect" method="POST" novalidate>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <div id="usernameError" class="error-message">Username is required</div>
+            </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span class="show-password" id="togglePassword">Show</span>
+                <div id="passwordError" class="error-message">Password is required</div>
+            </div>
 
-            <label>
+            <div class="checkbox-container">
                 <input type="checkbox" id="remember" name="remember">
-                Remember me
-            </label>
+                <label for="remember">Remember me</label>
+            </div>
 
             <input type="submit" value="Log In">
         </form>
 
         <div class="form-footer">
-            <p><a href="forgot-password.html">Forgot Password?</a></p>
-            <p>Don't have an account? <a href="register.html">Sign up here</a></p>
+            <p><a href="#">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#">Sign up here</a></p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            const togglePassword = document.getElementById('togglePassword');
+
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+            // Toggle password visibility
+            togglePassword.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    togglePassword.textContent = 'Hide';
+                } else {
+                    passwordInput.type = 'password';
+                    togglePassword.textContent = 'Show';
+                }
+            });
+
+            // Validate form on submit
+            loginForm.addEventListener('submit', function(e) {
+                let isValid = true;
+                
+                // Reset previous error states
+                usernameInput.classList.remove('error');
+                passwordInput.classList.remove('error');
+                usernameError.style.display = 'none';
+                passwordError.style.display = 'none';
+                
+                // Validate username
+                if (!usernameInput.value.trim()) {
+                    usernameInput.classList.add('error');
+                    usernameError.style.display = 'block';
+                    isValid = false;
+                } else if (usernameInput.value.trim().length < 3) {
+                    usernameInput.classList.add('error');
+                    usernameError.textContent = 'Username must be at least 3 characters';
+                    usernameError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate password using regex
+                if (!passwordInput.value) {
+                    passwordInput.classList.add('error');
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                } else if (!passwordRegex.test(passwordInput.value)) {
+                    passwordInput.classList.add('error');
+                    passwordError.textContent = 'Password must be at least 6 characters with at least one uppercase letter, one lowercase letter, and one number';
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    e.preventDefault(); // Prevent form submission if validation fails
+                } else{
+                    window.location.href("index.html")
+                }
+            });
+            
+            // Clear error when input changes
+            usernameInput.addEventListener('input', function() {
+                this.classList.remove('error');
+                usernameError.style.display = 'none';
+            });
+            
+            passwordInput.addEventListener('input', function() {
+                this.classList.remove('error');
+                passwordError.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
-
